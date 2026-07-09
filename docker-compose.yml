@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  password-manager:
+    build: .
+    container_name: password-manager
+    volumes:
+      - ./data:/app/data
+      - ./vault:/app/vault
+    stdin_open: true
+    tty: true
+    environment:
+      - VAULT_PATH=/app/data/vault.vault
+    # CLI режим
+    command: ["--help"]
