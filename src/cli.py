@@ -159,6 +159,20 @@ def generate(length):
     password = gen.generate(length=length)
     click.echo(f"\n🔑 Пароль: {password}")
 
-
+@cli.command()
+@click.argument('password')
+def check(password):
+    """Проверка стойкости пароля"""
+    analyzer = PasswordStrengthAnalyzer()
+    result = analyzer.classify_strength(password)
+    click.echo(f"\n📊 Результаты:")
+    click.echo(f"   Длина: {result['length']} символов")
+    click.echo(f"   Энтропия: {result['entropy']} бит")
+    click.echo(f"   Стойкость: {result['strength']}")
+    if result['warnings']:
+        click.echo(f"\n⚠️ Предупреждения:")
+        for warning in result['warnings']:
+            click.echo(f"   - {warning}")
+            
 if __name__ == '__main__':
     cli()
