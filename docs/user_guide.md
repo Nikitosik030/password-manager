@@ -211,7 +211,7 @@ python -m src.main export --output C:\Users\username\Desktop\backup.vault
 
 ## Docker-команды (полный список)
 
-Если пользователь работает на Windows PowerShell, нужно заменить $(pwd) на ${pwd}, если на Windows CMD, то заменить $(pwd) на %cd%. Для Linux и Mac меня не нужно.
+Если пользователь работает на Windows PowerShell, нужно заменить $(pwd) на ${pwd}, если на Windows CMD, то заменить $(pwd) на %cd%. Для Linux и Mac менять не нужно.
 
 ```bash
 # Сборка Docker-образа приложения
