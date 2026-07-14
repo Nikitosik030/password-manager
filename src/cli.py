@@ -106,6 +106,7 @@ def search(vault, query):
         for entry in results:
             click.echo(f"\n🔐 {entry.login}")
             click.echo(f"   ID: {entry.id[:8]}...")
+            click.echo(f"   Пароль: {entry.password}")
             click.echo(f"   URL: {entry.url or 'Нет'}")
     except Exception as e:
         click.echo(f"❌ Ошибка: {e}", err=True)
