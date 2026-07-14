@@ -52,6 +52,7 @@ def list(vault):
         for i, entry in enumerate(entries, 1):
             click.echo(f"\n{i}. 🔐 {entry.login}")
             click.echo(f"   ID: {entry.id[:8]}...")
+            click.echo(f"   Пароль: {entry.password}")
             click.echo(f"   URL: {entry.url or 'Нет'}")
             click.echo(f"   Заметка: {entry.note or 'Нет'}")
     except Exception as e:
@@ -173,6 +174,6 @@ def check(password):
         click.echo(f"\n⚠️ Предупреждения:")
         for warning in result['warnings']:
             click.echo(f"   - {warning}")
-            
+
 if __name__ == '__main__':
     cli()
