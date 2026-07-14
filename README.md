@@ -33,8 +33,6 @@
 ├── data/
 │ └── vault.vault # Зашифрованное хранилище
 ├── docs/
-│ ├── architecture.md # Описание архитектуры
-│ ├── project.md # Описание проекта
 │ └── user_guide.md # Руководство пользователя
 ├── src/
 │ ├── __init__.py
@@ -121,8 +119,6 @@ H = -∑ pᵢ · log₂(pᵢ)  (в битах на символ)
 ## Документация
 
 - [`docs/user_guide.md`](docs/user_guide.md) — руководство пользователя
-- [`docs/architecture.md`](docs/architecture.md) — описание архитектуры
-- [`docs/project.md`](docs/project.md) — описание проекта
 
 ---
 
