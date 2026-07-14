@@ -212,6 +212,7 @@ python -m src.main export --output C:\Users\username\Desktop\backup.vault
 ## Docker-команды (полный список)
 
 ```bash
+Если пользователь работает на Windows PowerShell, нужно заменить $(pwd) на ${pwd}, если на Windows CMD, то заменить $(pwd) на %cd%. Для Linux и Mac меня не нужно.
 # Сборка Docker-образа приложения
 docker build -t password-manager .
 
@@ -247,6 +248,9 @@ docker run -it --rm -v $(pwd)/data:/app/data -v $(pwd)/vault:/app/vault password
 
 # Экспорт данных в конкретный файл в текущей рабочей директории
 docker run -it --rm -v $(pwd)/data:/app/data -v $(pwd):/app/out password-manager export --output /app/out/my_backup.vault
+
+#Экспорт данных в конктретый файл на пк(заменить "...")
+docker run -it --rm -v $(pwd)/data:/app/data -v "путь места для сохранения(Например: C:\Users\nikita\Desktop":/app/backup password-manager export --output /app/backup/vault_backup.vault
 
 # Удаление записи по её идентификатору (замените ID на реальное значение)
 docker run -it --rm -v $(pwd)/data:/app/data password-manager delete a1b2c3d4-...
